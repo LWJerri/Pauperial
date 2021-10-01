@@ -3,7 +3,6 @@
 
   let link;
   let secret = null;
-
   let qrCode = null;
   
   const API_URL = "http://localhost:4000";
