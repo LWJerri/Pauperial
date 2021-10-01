@@ -5,15 +5,18 @@ import { Links } from "../typeorm/entities/Links";
 export async function getCode(req: Request, res: Response) {
   try {
     const errResp = { code: req.params.id, link: null, views: null };
-    const codeRepository = getRepository(Links);
-    const findCode = await codeRepository.findOne({ code: req.params.id });
+    const linkRepository = getRepository(Links);
+    const link = await linkRepository.findOne({ code: req.params.id });
 
-    if (!findCode) return res.status(400).json(errResp);
+    if (!link) return res.status(400).json(errResp);
+    if (link.secret && req.query.secret !== link.secret) {
+      return res.status(403).json({ message: 'Wrong secret for that link' })
+    }
 
-    res.status(200).json({ code: req.params.id, link: findCode.link, views: findCode.codeUses });
+    res.status(200).json({ code: req.params.id, link: link.link, views: link.codeUses });
 
-    findCode.codeUses = findCode.codeUses + 1;
-    return codeRepository.save(findCode);
+    link.codeUses = link.codeUses + 1;
+    return linkRepository.save(link);
   } catch (err) {
     console.error("getCode error:", err);
 

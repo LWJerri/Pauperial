@@ -13,4 +13,7 @@ export class Links {
 
   @Column({ nullable: false, default: 0 })
   codeUses: number;
+
+  @Column({ nullable: true })
+  secret?: string
 }

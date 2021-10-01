@@ -1,39 +1,62 @@
 <script lang="ts">
-  import qr from "qrcode";
+  import { generateQr } from '../helpers/qr';
 
-  let url;
-  let code = null;
+  let link;
+  let secret = null;
   let qrCode = null;
-  const API_URL = "http://localhost:4000/";
+  
+  const API_URL = "http://localhost:4000";
+  $: result = {} as { secret: string, code: string, url: string }
 
   async function sendURL() {
-    const res = await fetch(`${API_URL}code`, {
+    const request = await fetch(`${API_URL}/code`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        'Content-Type': 'application/json'
       },
-      body: `link=${url}`,
+      body: JSON.stringify({
+        link,
+        secret,
+      }),
     });
 
-    const respData = await res.json();
-    code = respData.code;
+    result = await request.json();
+    result.url = generateUrl()
 
-    qr.toDataURL(`${window.location.origin}/${code}`, (err, src) => {
-      if(err) return qrCode = null;
+    qrCode = await generateQr(`${window.location.origin}/${result.code}`);
 
-      qrCode = src;
-    });
+    resetForm()
+  }
+
+  function generateUrl() {
+    const url = new URL(`${window.location.origin}/${result.code}`)
+    url.searchParams.append('secret', result.secret)
+    
+    url.searchParams.forEach((value, key) => {
+      if (!value) {
+        url.searchParams.delete(key)
+      }
+    })
+
+    return url.toString()
+  }
+
+  function resetForm() {
+    link = null;
+    secret = null;
   }
 </script>
 
 <div class="main">
   <h1 class="title">Pauperial</h1>
-  <input bind:value={url} class="input" placeholder="Paste your URL" />
+  <input bind:value={link} class="input" required placeholder="Paste your URL" />
+  <br>
+  <input bind:value={secret} class="input" placeholder="Paste secret (if needed)" />
   <br />
   <button type="button" on:click={sendURL} class="button"><b>＾▽＾)</b></button>
   <br />
-  {#if code}
-    <a href="{window.location.origin}/{code}" target="_blank" class="ready">{window.location.origin}/{code}</a>
+  {#if result.code}
+    <a href="{result.url}" target="_blank" class="ready">{result.url}</a>
     
     <br/>
     

@@ -4,28 +4,25 @@ import { Links } from "../typeorm/entities/Links";
 import { URL } from "url";
 import { getRepository } from "typeorm";
 
+const isLinkValid = (link: string) => {
+  try {
+    new URL(link);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
 export async function postLink(req: Request, res: Response) {
   try {
-    const errResp = { code: null, link: req.body.link, views: null };
-    const checker = (link: string) => {
-      try {
-        new URL(req.body.link);
-        return true;
-      } catch (err) {
-        return false;
-      }
+    if (!req.body.link || !isLinkValid(req.body.link)) {
+      return res.status(400).json({ code: null, link: req.body.link, views: null, message: 'You pasted not valid link.' })
     };
 
-    if (!req.body.link || !checker(req.body.link)) return res.status(400).json(errResp);
-
     const codeRepository = getRepository(Links);
-    const findLink = await codeRepository.findOne({ link: req.body.link });
+    const link = await codeRepository.save({ code: nanoid(10), link: req.body.link, codeUses: 0, secret: req.body.secret });
 
-    if (findLink) return res.status(200).json({ code: findLink.code, link: req.body.link, views: findLink.codeUses });
-
-    const newLink = await codeRepository.save({ code: nanoid(10), link: req.body.link, codeUses: 0 });
-
-    return res.status(200).json({ code: newLink.code, link: newLink.link, views: newLink.codeUses });
+    return res.status(200).json({ ...link, views: link.codeUses });
   } catch (err) {
     console.error("postLink error:", err);
 
