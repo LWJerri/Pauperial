@@ -1,0 +1,19 @@
+{
+  "name": "pauperial",
+  "version": "1.0.0",
+  "description": "Pauperial - Service for make short links!",
+  "engines": {
+    "node": ">= 16"
+  },
+  "repository": "https://github.com/LWJerri/Pauperial",
+  "author": "LWJerri (lwjerri.js.org)",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "tslib": "^2.2.0"
+  }
+}
