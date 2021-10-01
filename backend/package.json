@@ -6,7 +6,8 @@
     "build": "tsc",
     "dev": "nodemon .",
     "start": "yarn build && typeorm migration:run && node dist/app.js",
-    "migration:generate": "yarn build && typeorm migration:generate -n"
+    "migration:generate": "yarn build && typeorm migration:generate -n",
+    "migration:up": "typeorm migration:run"
   },
   "engines": {
     "node": ">= 16"
