@@ -8,7 +8,7 @@
   onMount(async () => {
     try {
       const params = (new URL(document.location.href)).searchParams;
-      const res = await fetch(`${API_URL}${code}?secret=${params.get('secret') || ''}`, { method: "GET" });
+      const res = await fetch(`${API_URL}${code}?${params.toString()}`, { method: "GET" });
       const respData = await res.json();
   
       window.location.href = respData.link ?? window.location.origin;
