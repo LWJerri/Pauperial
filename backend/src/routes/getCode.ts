@@ -10,7 +10,7 @@ export default async function getCode(req: Request, res: Response) {
 
     if (!link) return res.status(400).json(errResp);
     if (link.secret && req.query.code !== link.secret) {
-      return res.status(403).json({ error: 'Wrong secret for that link' })
+      return res.status(403).json({ message: 'Wrong secret for that link' })
     }
 
     res.status(200).json({ code: req.params.id, link: link.link, views: link.codeUses });
