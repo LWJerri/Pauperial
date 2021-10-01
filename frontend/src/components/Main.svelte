@@ -2,9 +2,11 @@
   import qr from "qrcode";
 
   let link;
+  let secret = null;
+
   let code = null;
   let qrCode = null;
-  let secret = null;
+  
   const API_URL = "http://localhost:4000/";
 
   async function sendURL() {
