@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "",
+  "port": 5432,
+  "username": "",
+  "password": "",
+  "database": "",
+  "entities": ["dist/typeorm/entities/**/*.js"],
+  "migrations": ["dist/typeorm/migrations/**/*.js"],
+  "cli": {
+    "entitiesDir": "src/typeorm/entities",
+    "migrationsDir": "src/typeorm/migrations"
+  }
+}
