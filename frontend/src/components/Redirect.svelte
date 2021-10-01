@@ -14,7 +14,7 @@
       window.location.href = respData.link ?? window.location.origin;
     } catch (e) {
       e = await e.json()
-      response = e.error
+      response = e.message
     }
   });
 </script>
