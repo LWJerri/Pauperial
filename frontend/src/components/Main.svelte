@@ -1,9 +1,10 @@
 <script lang="ts">
   import qr from "qrcode";
 
-  let url;
+  let link;
   let code = null;
   let qrCode = null;
+  let secret = null;
   const API_URL = "http://localhost:4000/";
 
   async function sendURL() {
@@ -12,7 +13,10 @@
       headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
       },
-      body: `link=${url}`,
+      body: JSON.stringify({
+        link,
+        secret,
+      }),
     });
 
     const respData = await res.json();
@@ -28,7 +32,8 @@
 
 <div class="main">
   <h1 class="title">Pauperial</h1>
-  <input bind:value={url} class="input" placeholder="Paste your URL" />
+  <input bind:value={link} class="input" required placeholder="Paste your URL" />
+  <input bind:value={secret} class="input" placeholder="Paste secret (if needed)" />
   <br />
   <button type="button" on:click={sendURL} class="button"><b>＾▽＾)</b></button>
   <br />
