@@ -6,7 +6,6 @@ import { getRepository } from "typeorm";
 
 export default async function postLink(req: Request, res: Response) {
   try {
-    const errResp = { code: null, link: req.body.link, views: null };
     const checker = (link: string) => {
       try {
         new URL(req.body.link);
@@ -16,14 +15,16 @@ export default async function postLink(req: Request, res: Response) {
       }
     };
 
-    if (!req.body.link || !checker(req.body.link)) return res.status(400).json(errResp);
+    if (!req.body.link || !checker(req.body.link)) {
+      return res.status(400).json({ code: null, link: req.body.link, views: null })
+    };
 
     const codeRepository = getRepository(Links);
     const findLink = await codeRepository.findOne({ link: req.body.link });
 
     if (findLink) return res.status(200).json({ code: findLink.code, link: req.body.link, views: findLink.codeUses });
 
-    const newLink = await codeRepository.save({ code: nanoid(10), link: req.body.link, codeUses: 0 });
+    const newLink = await codeRepository.save({ code: nanoid(10), link: req.body.link, codeUses: 0, secret: req.body.secret });
 
     return res.status(200).json({ code: newLink.code, link: newLink.link, views: newLink.codeUses });
   } catch (err) {
