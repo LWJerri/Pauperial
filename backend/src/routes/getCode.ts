@@ -9,7 +9,7 @@ export default async function getCode(req: Request, res: Response) {
     const link = await linkRepository.findOne({ code: req.params.id });
 
     if (!link) return res.status(400).json(errResp);
-    if (link.secret && req.query.code !== link.secret) {
+    if (link.secret && req.query.secret !== link.secret) {
       return res.status(403).json({ message: 'Wrong secret for that link' })
     }
 
