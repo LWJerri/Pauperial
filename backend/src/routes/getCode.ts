@@ -2,7 +2,7 @@ import type { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import { Links } from "../typeorm/entities/Links";
 
-export default async function getCode(req: Request, res: Response) {
+export async function getCode(req: Request, res: Response) {
   try {
     const errResp = { code: req.params.id, link: null, views: null };
     const linkRepository = getRepository(Links);

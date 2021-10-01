@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 
-export default async function unknown(req: Request, res: Response) {
+export async function unknown(req: Request, res: Response) {
   try {
     return res.status(404).json({ message: "Endpoint not found!" });
   } catch (err) {

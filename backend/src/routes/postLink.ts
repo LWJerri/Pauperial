@@ -13,7 +13,7 @@ const isLinkValid = (link: string) => {
   }
 };
 
-export default async function postLink(req: Request, res: Response) {
+export async function postLink(req: Request, res: Response) {
   try {
     if (!req.body.link || !isLinkValid(req.body.link)) {
       return res.status(400).json({ code: null, link: req.body.link, views: null, message: 'You pasted not valid link.' })
