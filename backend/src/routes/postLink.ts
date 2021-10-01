@@ -4,7 +4,7 @@ import { Links } from "../typeorm/entities/Links";
 import { URL } from "url";
 import { getRepository } from "typeorm";
 
-export default async function postLink(req: Request, res: Response) {
+export async function postLink(req: Request, res: Response) {
   try {
     const errResp = { code: null, link: req.body.link, views: null };
     const checker = (link: string) => {
