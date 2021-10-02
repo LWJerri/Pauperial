@@ -1,6 +1,6 @@
 import { URL } from "url";
 
-export default function linkValidator(link: string): boolean {
+export default function linkValidation(link: string): boolean {
   try {
     new URL(link);
     return true;
