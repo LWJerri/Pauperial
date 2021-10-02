@@ -1,6 +1,6 @@
 {
   "name": "@pauperial/backend",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",

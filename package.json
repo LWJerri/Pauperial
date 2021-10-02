@@ -15,6 +15,7 @@
     ]
   },
   "scripts": {
+    "start": "yarn start:backend",
     "build": "yarn workspaces run build",
     "clean": "rimraf ./**/dist",
     "clean:modules": "rimraf **/node_modules",

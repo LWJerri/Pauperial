@@ -5,11 +5,10 @@
   let origin = window.location.origin;
   let alerts = "";
 
-  const API_URL = "http://localhost:4000";
   $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string, message: string };
 
   async function sendURL() {
-    const request = await fetch(`${API_URL}/code`, {
+    const request = await fetch(`/api/code`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
