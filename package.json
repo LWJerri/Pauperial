@@ -7,8 +7,8 @@
   },
   "workspaces": {
     "packages": [
-      "backend",
-      "frontend"
+      "frontend",
+      "backend"
     ],
     "nohoist": [
       "**"
@@ -17,7 +17,11 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "clean": "rimraf ./**/dist",
-    "clean:modules": "rimraf **/node_modules"
+    "clean:modules": "rimraf **/node_modules",
+    "start:backend": "yarn workspace @pauperial/backend start",
+    "start:frontend": "yarn workspace @pauperial/frontend start",
+    "dev:frontend": "yarn workspace @pauperial/frontend dev",
+    "dev:backend": "yarn workspace @pauperial/backend dev"
   },
   "repository": "https://github.com/LWJerri/Pauperial",
   "author": "LWJerri (lwjerri.js.org)",
