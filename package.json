@@ -1,9 +1,23 @@
 {
   "name": "pauperial",
-  "version": "1.0.0",
+  "private": true,
   "description": "Pauperial - Service for make short links!",
   "engines": {
     "node": ">= 16"
+  },
+  "workspaces": {
+    "packages": [
+      "backend",
+      "frontend"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "clean": "rimraf ./**/dist",
+    "clean:modules": "rimraf **/node_modules"
   },
   "repository": "https://github.com/LWJerri/Pauperial",
   "author": "LWJerri (lwjerri.js.org)",
@@ -11,6 +25,7 @@
   "devDependencies": {
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.4.3"
   },
   "dependencies": {
