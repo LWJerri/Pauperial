@@ -5,7 +5,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc",
     "dev": "nodemon .",
-    "start": "yarn build && yarn migration:run && node dist/app.js",
+    "start": "yarn migration:run && node dist/app.js",
     "migration:generate": "yarn build && typeorm migration:generate -n",
     "migration:run": "typeorm migration:run"
   },
