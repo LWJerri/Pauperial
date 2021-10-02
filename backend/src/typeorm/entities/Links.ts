@@ -16,7 +16,4 @@ export class Links {
 
   @Column({ nullable: true })
   secret?: string;
-
-  @Column({ nullable: false })
-  qrData: string;
 }
