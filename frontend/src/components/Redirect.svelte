@@ -2,19 +2,19 @@
   import { onMount } from "svelte";
 
   export let code;
-  let response = 'Wait...'
+  let response = "Wait...";
   const API_URL = "http://localhost:4000/code/";
 
   onMount(async () => {
-    const params = (new URL(document.location.href)).searchParams;
+    const params = new URL(document.location.href).searchParams;
     const res = await fetch(`${API_URL}${code}?${params.toString()}`, { method: "GET" });
     const respData = await res.json();
-    
+
     if (res.ok) {
       window.location.href = respData.link ?? window.location.origin;
     } else {
-      console.log(respData)
-      response = respData.message
+      console.log(respData);
+      response = respData.message;
     }
   });
 </script>
@@ -24,5 +24,10 @@
 <style>
   p {
     color: white;
+    font-size: 25px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>
