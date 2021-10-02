@@ -26,6 +26,10 @@ For frontend:
 - In `Main.svelte` & `Redirect.svelte` files set `API_URL`
 - Run production code `yarn start:frontend`
 
+## Production
+
+You also can use or test this code, just visit the [Pauperial website](https://pauperial.herokuapp.com/)
+
 ## Screenshots
 
 ![First screenshot](https://i.imgur.com/E8xmIh8.png)
