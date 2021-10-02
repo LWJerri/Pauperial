@@ -1,13 +1,13 @@
 {
   "name": "@pauperial/backend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
     "dev": "nodemon .",
-    "start": "yarn build && typeorm migration:run && node dist/app.js",
+    "start": "yarn build && yarn migration:run && node dist/app.js",
     "migration:generate": "yarn build && typeorm migration:generate -n",
-    "migration:up": "typeorm migration:run"
+    "migration:run": "typeorm migration:run"
   },
   "engines": {
     "node": ">= 16"
@@ -19,6 +19,7 @@
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^16.10.2",
+    "@types/qrcode": "^1.4.1",
     "@types/source-map-support": "^0.5.4",
     "nodemon": "^2.0.13",
     "ts-node": "^10.2.1",
@@ -29,6 +30,7 @@
     "express": "^4.17.1",
     "nanoid": "^3.1.28",
     "pg": "^8.7.1",
+    "qrcode": "^1.4.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "source-map-support": "^0.5.20",
