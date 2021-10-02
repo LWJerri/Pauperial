@@ -12,8 +12,11 @@ export class Links {
   link: string;
 
   @Column({ nullable: false, default: 0 })
-  codeUses: number;
+  views: number;
 
   @Column({ nullable: true })
-  secret?: string
+  secret?: string;
+
+  @Column({ nullable: false })
+  qrData: string;
 }
