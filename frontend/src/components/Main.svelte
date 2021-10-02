@@ -1,44 +1,46 @@
 <script lang="ts">
-  import { generateQr } from '../helpers/qr';
-
   let link;
   let secret = null;
   let qrCode = null;
-  
+  let origin = window.location.origin;
+  let alerts = "";
+
   const API_URL = "http://localhost:4000";
-  $: result = {} as { secret: string, code: string, url: string }
+  $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string, message: string };
 
   async function sendURL() {
     const request = await fetch(`${API_URL}/code`, {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         link,
         secret,
+        origin,
       }),
     });
 
     result = await request.json();
-    result.url = generateUrl()
+    result.url = generateUrl();
+    qrCode = result.qrData;
 
-    qrCode = await generateQr(`${window.location.origin}/${result.code}`);
+    result.error ? alerts = result.message : alerts = "";
 
-    resetForm()
+    resetForm();
   }
 
   function generateUrl() {
-    const url = new URL(`${window.location.origin}/${result.code}`)
-    url.searchParams.append('secret', result.secret)
-    
-    url.searchParams.forEach((value, key) => {
-      if (!value) {
-        url.searchParams.delete(key)
-      }
-    })
+    const url = new URL(`${window.location.origin}/${result.code}`);
+    url.searchParams.append("secret", result.secret);
 
-    return url.toString()
+    url.searchParams.forEach((value, key) => {
+      if (value == "null") {
+        url.searchParams.delete(key);
+      }
+    });
+
+    return url.toString();
   }
 
   function resetForm() {
@@ -50,26 +52,33 @@
 <div class="main">
   <h1 class="title">Pauperial</h1>
   <input bind:value={link} class="input" required placeholder="Paste your URL" />
-  <br>
-  <input bind:value={secret} class="input" placeholder="Paste secret (if needed)" />
+  <br />
+  <input bind:value={secret} class="input" placeholder="Secret code (optional)" />
   <br />
   <button type="button" on:click={sendURL} class="button"><b>＾▽＾)</b></button>
   <br />
+  <p class="alerts">{alerts}</p>
   {#if result.code}
-    <a href="{result.url}" target="_blank" class="ready">{result.url}</a>
-    
-    <br/>
-    
+    <a href={result.url} target="_blank" class="ready">{result.url}</a>
+
+    <br />
+
     {#if qrCode}
-      <img class="test" src={qrCode} alt="SHORT_LINK">
+      <img class="qrCode" src={qrCode} alt="SHORT_LINK" />
     {/if}
   {/if}
 </div>
 
 <style>
-  .test{
+  .qrCode {
     margin-top: 15px;
   }
+
+  .alerts{
+    color: white;
+    font-size: 20px;
+  }
+
   .ready {
     text-decoration: underline;
     color: white;
