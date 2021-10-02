@@ -14,20 +14,22 @@ Pauperial - Simple tool for making short links or QR-code for your looong links.
 
 - Clone this repository: `git clone https://github.com/LWJerri/Pauperial.git`
 - Install Node.js requirements `yarn`
+- Build production code `yarn build`
 
 For backend:
 
-- Install Node.js requirements `yarn`
 - Rename `ormconfig.example.json` to `ormconfig.json` and configurate it
-- Build production code `yarn build`
-- Run production code `yarn start`
+- Run production code `yarn start:backend`
 
 For frontend:
 
-- Install Node.js requirements `yarn`
 - In `Main.svelte` & `Redirect.svelte` files set `API_URL`
-- Build production code `yarn build`
-- Run production code `yarn start`
+- Run production code `yarn start:frontend`
+
+## Screenshots
+
+![First screenshot](https://i.imgur.com/E8xmIh8.png)
+![Second screenshot](https://i.imgur.com/Xr1Bwwy.png)
 
 ## Contributing
 
