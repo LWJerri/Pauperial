@@ -10,7 +10,7 @@ export async function postLink(req: Request, res: Response) {
     if (!req.body.link || !linkValidation(req.body.link)) return res.status(400).json({ error: true, message: "You post invalid link" });
 
     const codeRepository = getRepository(Links);
-    let code = nanoid(Math.floor(Math.random() * 15) + 5);
+    let code = nanoid(5);
 
     await codeRepository.save({ code: code, link: req.body.link, views: 0, secret: req.body.secret });
 
