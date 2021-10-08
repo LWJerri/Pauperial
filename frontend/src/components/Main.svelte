@@ -70,18 +70,18 @@
 
 <style>
   .qrCode {
-    margin-top: 15px;
+    margin-top: 0.938rem;
   }
 
   .alerts{
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .ready {
     text-decoration: underline;
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .main {
@@ -99,9 +99,9 @@
     -ms-user-select: none;
     user-select: none;
     color: #eb459e;
-    font-size: 55px;
+    font-size: 3.438rem;
     text-transform: uppercase;
-    margin-bottom: 75px;
+    margin-bottom: 4.688rem;
     outline: none;
   }
 
@@ -110,16 +110,16 @@
     color: black;
     border: none;
     outline: none;
-    font-size: 20px;
-    padding: 5px 0px 5px 0px;
-    width: 350px;
-    margin-bottom: 50px;
-    border-radius: 15px;
+    font-size: 1.25rem;
+    padding: 0.313rem 0rem 0.313rem 0rem;
+    width: 21.875rem;
+    margin-bottom: 3.125rem;
+    border-radius: 0.938rem;
   }
 
-  @media screen and (max-width: 355px) {
+  @media screen and (max-width: 22.188rem) {
     .input {
-      width: 280px;
+      width: 17.5rem;
     }
   }
 
@@ -140,34 +140,34 @@
     -ms-user-select: none;
     user-select: none;
     color: white;
-    font-size: 25px;
+    font-size: 1.563rem;
     font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 50px 13px;
+    letter-spacing: 0.063rem;
+    padding: 0.813rem 3.125rem 0.813rem;
     outline: 0;
-    border: 1px solid black;
-    border-radius: 15px;
+    border: 0.063rem solid black;
+    border-radius: 0.938rem;
     position: relative;
     background-color: rgba(0, 0, 0, 0);
-    margin-bottom: 25px;
+    margin-bottom: 1.75rem;
   }
 
   .button::after {
     content: "";
     background-color: #5865f2;
-    border-radius: 15px;
+    border-radius: 0.938rem;
     width: 100%;
     z-index: -1;
     position: absolute;
     height: 100%;
-    top: 7px;
-    left: 7px;
+    top: 0.438rem;
+    left: 0.438rem;
     transition: 0.2s;
   }
 
   .button:hover::after {
     background-color: #ed4245;
-    top: 0px;
-    left: 0px;
+    top: 0rem;
+    left: 0rem;
   }
 </style>

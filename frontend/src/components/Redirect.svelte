@@ -23,7 +23,7 @@
 <style>
   p {
     color: white;
-    font-size: 25px;
+    font-size: 1.563rem;
     position: fixed;
     left: 50%;
     top: 50%;
