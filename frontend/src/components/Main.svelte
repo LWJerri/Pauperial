@@ -1,10 +1,7 @@
 <script lang="ts">
-  let link;
-  let secret = null;
-  let qrCode = null;
-  let origin = window.location.origin;
-  let alerts = "";
+  const origin = window.location.origin;
 
+  $: form = {link: null, secret: null}
   $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string, message: string };
 
   async function sendURL() {
@@ -14,23 +11,19 @@
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        link,
-        secret,
+        ...form,
         origin,
       }),
     });
 
     result = await request.json();
     result.url = generateUrl();
-    qrCode = result.qrData;
-
-    result.error ? alerts = result.message : alerts = "";
 
     resetForm();
   }
 
   function generateUrl() {
-    const url = new URL(`${window.location.origin}/${result.code}`);
+    const url = new URL(`${origin}/${result.code}`);
     url.searchParams.append("secret", result.secret);
 
     url.searchParams.forEach((value, key) => {
@@ -43,27 +36,31 @@
   }
 
   function resetForm() {
-    link = null;
-    secret = null;
+    form.link = null;
+    form.secret = null;
   }
 </script>
 
 <div class="main">
   <h1 class="title">Pauperial</h1>
-  <input bind:value={link} class="input" required placeholder="Paste your URL" />
+  <input bind:value={form.link} class="input" required placeholder="Paste your URL" />
   <br />
-  <input bind:value={secret} class="input" placeholder="Secret code (optional)" />
+  <input bind:value={form.secret} class="input" placeholder="Secret code (optional)" />
   <br />
   <button type="button" on:click={sendURL} class="button"><b>＾▽＾)</b></button>
   <br />
-  <p class="alerts">{alerts}</p>
+
+  {#if result.error}
+  <p class="alert">{result.message}</p>
+  {/if}
+
   {#if result.code}
     <a href={result.url} target="_blank" class="ready">{result.url}</a>
 
     <br />
 
-    {#if qrCode}
-      <img class="qrCode" src={qrCode} alt="SHORT_LINK" />
+    {#if result.qrData}
+      <img class="qrCode" src={result.qrData} alt="SHORT_LINK" />
     {/if}
   {/if}
 </div>
@@ -73,7 +70,7 @@
     margin-top: 0.938rem;
   }
 
-  .alerts{
+  .alert{
     color: white;
     font-size: 1.25rem;
   }
