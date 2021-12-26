@@ -1,8 +1,8 @@
 <script lang="ts">
   const origin = window.location.origin;
 
-  $: form = {link: null, secret: null}
-  $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string, message: string };
+  $: form = { link: null, secret: null };
+  $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string; message: string };
 
   async function sendURL() {
     const request = await fetch("/api/code", {
@@ -51,7 +51,7 @@
   <br />
 
   {#if result.error}
-  <p class="alert">{result.message}</p>
+    <p class="alert">{result.message}</p>
   {/if}
 
   {#if result.code}
@@ -70,7 +70,7 @@
     margin-top: 0.938rem;
   }
 
-  .alert{
+  .alert {
     color: white;
     font-size: 1.25rem;
   }
