@@ -6,12 +6,13 @@ import { Links } from "../typeorm/entities/Links";
 export async function getCode(req: Request, res: Response) {
   try {
     const link = await getLink(req.params.id, req.headers.host);
-    if (!link || link.error) return res.status(400).json({ error: true, message: "Code doesn't exist" });
 
-    getRepository(Links).update({ code: req.params.id }, { views: link.views + 1 });
+    if (!link || link.error) return res.status(400).json({ error: true, message: link.message });
 
     if (link.secret && req.query.secret !== link.secret)
-      return res.status(403).json({ error: true, message: "Wrong secret for that link" });
+      return res.status(403).json({ error: true, message: "You provide the wrong secret for this code!" });
+
+    await getRepository(Links).update({ code: req.params.id }, { views: link.views + 1 });
 
     return res.status(200).json({ error: false, ...link });
   } catch (err) {
