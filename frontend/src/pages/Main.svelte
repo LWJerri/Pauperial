@@ -51,7 +51,7 @@
   <div class="hero min-h-screen">
     <div class="text-center hero-content text-white">
       <div class="max-w-md">
-        <h1 class="mb-10 text-7xl font-bold outline-none select-none">Pauperial</h1>
+        <h1 class="mb-10 text-6xl font-bold outline-none select-none">Pauperial</h1>
 
         <div class="form-control">
           <input bind:value={form.link} type="text" placeholder="Put your URL" class="input input-bordered mb-5 text-lg select-none" />
