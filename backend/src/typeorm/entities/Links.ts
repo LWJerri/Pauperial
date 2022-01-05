@@ -17,6 +17,6 @@ export class Links {
   @Column({ nullable: true })
   secret?: string;
 
-  @CreateDateColumn({ default: null })
-  createdAt: Date;
+  @Column({ nullable: true })
+  createdAt: string;
 }

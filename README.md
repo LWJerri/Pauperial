@@ -14,19 +14,20 @@ Pauperial - Simple tool for making short links or QR-code for your looong links.
 
 - Clone this repository: `git clone https://github.com/LWJerri/Pauperial.git`
 - Install Node.js requirements `yarn`
+- Rename `.env.example` in backend folder to `.env`
+- Configurate `.env`
 - Build production code `yarn build`
-- Rename `ormconfig.example.json` in backend folder to `ormconfig.json`
-- Configurate `ormconfig.json` or use [TypeORM environments](https://github.com/typeorm/typeorm/blob/master/docs/using-ormconfig.md#using-environment-variables)
 - Run production code `yarn start`
 
 ## Production
 
-You also can use or test this code, just visit the [Pauperial website](https://pauperial.herokuapp.com/)
+You also can use or test this code, just visit the [Pauperial website](https://paup.ml/)
 
 ## Screenshots
 
-![First screenshot](https://i.imgur.com/E8xmIh8.png)
-![Second screenshot](https://i.imgur.com/Xr1Bwwy.png)
+![First screenshot](https://i.imgur.com/Krhd2fG.png)
+![Second screenshot](https://i.imgur.com/a1YzmEn.png)
+![Third screenshot](https://i.imgur.com/IakH7PX.png)
 
 ## Contributing
 

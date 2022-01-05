@@ -7,12 +7,14 @@ import getLink from "../helpers/getLink";
 
 export async function postLink(req: Request, res: Response) {
   try {
-    if (!req.body.link || !linkValidation(req.body.link)) return res.status(400).json({ error: true, message: "You post invalid link" });
+    const { link, secret } = req.body;
+
+    if (!link || !linkValidation(link)) return res.status(400).json({ error: true, message: "You provide an incorrect URL!" });
 
     const codeRepository = getRepository(Links);
-    let code = nanoid(5);
+    const code = nanoid(5);
 
-    await codeRepository.save({ code: code, link: req.body.link, views: 0, secret: req.body.secret });
+    await codeRepository.save({ code, link, secret, createdAt: String(Date.now()) });
 
     return res.status(200).json({ error: false, ...(await getLink(code, req.headers.host)) });
   } catch (err) {

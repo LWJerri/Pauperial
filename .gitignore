@@ -2,3 +2,4 @@ node_modules
 dist
 ormconfig.json
 yarn-error.log
+.env
