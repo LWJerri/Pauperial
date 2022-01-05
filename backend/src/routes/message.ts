@@ -11,7 +11,7 @@ export async function postMessage(req: Request, res: Response) {
     if (text.length > 1000)
       return res.status(400).json({ error: true, message: "Your message is too long! The message must be less than 1000 symbols!" });
 
-    await axios.post(`${baseURL}&text=EMAIL: ${email}\nTEXT: ${text}`);
+    await axios.post(encodeURI(`${baseURL}&text=EMAIL: ${email}\nTEXT: ${text}`));
 
     return res.status(200).send({ error: false, message: "Your message was submitted! Thanks :3" });
   } catch (err) {
