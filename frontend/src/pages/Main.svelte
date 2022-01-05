@@ -54,12 +54,12 @@
         <h1 class="mb-10 text-6xl font-bold outline-none select-none">Pauperial</h1>
 
         <div class="form-control">
-          <input bind:value={form.link} type="text" placeholder="Put your URL" class="input input-bordered mb-5 text-lg select-none" />
+          <input bind:value={form.link} type="text" placeholder="Put your URL" class="input input-bordered mb-5 text-lg" />
           <input
             bind:value={form.secret}
             type="text"
             placeholder="Secret code (optional)"
-            class="input input-bordered mb-5 text-lg select-none"
+            class="input input-bordered mb-5 text-lg"
           />
         </div>
 
