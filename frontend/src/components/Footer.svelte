@@ -1,4 +1,4 @@
-<footer class="items-center p-4 footer bg-neutral text-white text-base select-none">
+<footer class="items-center p-4 footer bg-neutral text-white text-base select-none w-full">
   <div class="items-center grid-flow-col">
     <p class="font-bold">Pauperial</p>
     <p>&copy; {new Date().getFullYear()} - All right reserved</p>
