@@ -37,18 +37,18 @@
 </script>
 
 <div>
-  <div class="hero min-h-screen select-none">
+  <div class="hero min-h-screen">
     <div class="flex-col justify-center hero-content lg:flex-row">
       <div class="text-center lg:text-left">
-        <h1 class="mb-5 text-5xl font-bold outline-none">Pauperial</h1>
-        <p class="mb-10">Small project for converting very loooooong links to pretty short links.</p>
+        <h1 class="mb-5 text-5xl font-bold outline-none select-none">Pauperial</h1>
+        <p class="mb-10 select-none">Small project for converting very loooooong links to pretty short links.</p>
 
         <a href="/" class="btn btn-outline btn-accent btn-wide mb-2">Main page</a>
       </div>
 
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
-          <p class="text-center mb-5 text-lg">Contact with developer</p>
+          <p class="text-center mb-5 text-lg select-none">Contact with developer</p>
 
           {#if response.error}
             <div class="alert alert-error mb-5">
@@ -76,7 +76,7 @@
             <button class="btn btn-outline btn-accent" on:click={async () => await sendURL()}>Send message</button>
           </div>
 
-          <a href="https://github.com/LWJerri/Pauperial" target="_blank" class="link link-hover mb-2">GitHub</a>
+          <a href="https://github.com/LWJerri/Pauperial" target="_blank" class="link link-hover mb-2 select-none">GitHub</a>
         </div>
       </div>
     </div>
