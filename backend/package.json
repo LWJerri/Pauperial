@@ -32,7 +32,7 @@
     "cors": "^2.8.5",
     "email-validator": "^2.0.4",
     "express": "^4.17.1",
-    "nanoid": "^3.1.28",
+    "nanoid": "^3.1.31",
     "pg": "^8.7.1",
     "qrcode": "^1.4.4",
     "reflect-metadata": "^0.1.13",
