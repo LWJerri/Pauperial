@@ -33,7 +33,7 @@
     url.searchParams.append("secret", result.secret);
 
     url.searchParams.forEach((value, key) => {
-      if (value == "null") {
+      if (value == "null" || !result.secret.length) {
         url.searchParams.delete(key);
       }
     });
@@ -55,12 +55,7 @@
 
         <div class="form-control">
           <input bind:value={form.link} type="text" placeholder="Put your URL" class="input input-bordered mb-5 text-lg" />
-          <input
-            bind:value={form.secret}
-            type="text"
-            placeholder="Secret code (optional)"
-            class="input input-bordered mb-5 text-lg"
-          />
+          <input bind:value={form.secret} type="text" placeholder="Secret code (optional)" class="input input-bordered mb-5 text-lg" />
         </div>
 
         <button class="btn btn-outline btn-accent btn-wide" on:click={sendURL}>＾▽＾</button>
