@@ -1,4 +1,4 @@
-import "source-map-support";
+import "source-map-support/register";
 import "reflect-metadata";
 import cors from "cors";
 import express from "express";

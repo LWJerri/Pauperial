@@ -9,7 +9,8 @@ export async function postLink(req: Request, res: Response) {
   try {
     const { link, secret } = req.body;
 
-    if (!link || !linkValidation(link)) return res.status(400).json({ error: true, message: "You provide an incorrect URL!" });
+    if (!link || !linkValidation(link))
+      return res.status(400).json({ error: true, message: "You provide an incorrect URL!" });
 
     const codeRepository = getRepository(Links);
     const code = nanoid(5);
