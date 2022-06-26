@@ -14,7 +14,7 @@
   "author": "LWJerri (lwjerri.js.org)",
   "license": "MIT",
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
