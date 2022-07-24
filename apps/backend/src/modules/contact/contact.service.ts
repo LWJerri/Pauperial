@@ -12,7 +12,7 @@ export class ContactService {
 
     const { token, userId } = this.telegramConfig;
     const baseURL = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${userId}`;
-    const APIRequest = encodeURI(`${baseURL}&text=**EMAIL:** ${email}\n**MESSAGE:** ${message}`);
+    const APIRequest = encodeURI(`${baseURL}&text=> ${email}\n${message}`);
 
     try {
       await axios.get(APIRequest);
