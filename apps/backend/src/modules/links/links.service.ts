@@ -16,7 +16,7 @@ export class LinksService {
     const record = await this.prisma.link.findUnique({ where: { code } });
 
     if (!record) throw new NotFoundException("Record with this code not found!");
-    if ((record && record.secret && !secret) || record.secret !== secret)
+    if ((record && record.secret && record.secret !== secret) || (record.secret && !secret))
       throw new ForbiddenException("Please, provide a valid secret key!");
 
     const [qrCode, viewsUpdate] = await Promise.all([
@@ -26,7 +26,7 @@ export class LinksService {
 
     delete record["deleteKey"];
 
-    return record;
+    return { ...record, qrCode };
   }
 
   async create(body: CreateLinkDto, host: string) {
@@ -39,7 +39,7 @@ export class LinksService {
       toDataURL(`https://${host}/${code}`),
     ]);
 
-    return { record, qrCode };
+    return { ...record, qrCode };
   }
 
   async delete(param: DeleteLinkDto) {
