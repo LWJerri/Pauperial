@@ -8,18 +8,7 @@ class LinkEntityStats {
   today: number;
 }
 
-class PhotoEntityStats {
-  @ApiProperty()
-  total: number;
-
-  @ApiProperty()
-  today: number;
-}
-
 export class StatsEntity {
   @ApiProperty()
   link: LinkEntityStats;
-
-  @ApiProperty()
-  photo: PhotoEntityStats;
 }

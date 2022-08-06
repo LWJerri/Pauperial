@@ -7,7 +7,7 @@ export class TelegramBotConfig {
   readonly userId: string;
 
   constructor(private readonly configService: MainConfigService) {
-    this.token = this.configService.get<string>("BOT_TOKEN");
+    this.token = this.configService.get<string>("TELEGRAM_TOKEN");
     this.userId = configService.get<string>("USER_ID");
   }
 }

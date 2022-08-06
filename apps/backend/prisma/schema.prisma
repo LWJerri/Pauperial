@@ -18,14 +18,3 @@ model Link {
 
   @@map("link")
 }
-
-model Photo {
-  id        String   @unique @default(cuid())
-  url       String
-  code      String   @unique
-  deleteKey String   @unique
-  views     Int      @default(0)
-  createAt  DateTime @default(now())
-
-  @@map("photo")
-}
