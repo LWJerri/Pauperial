@@ -76,7 +76,9 @@
             <button class="btn btn-outline btn-accent" on:click={async () => await sendURL()}>Send message</button>
           </div>
 
-          <a href="https://github.com/LWJerri/Pauperial" target="_blank" class="link link-hover mb-2 select-none">GitHub</a>
+          <a href="https://github.com/LWJerri/Pauperial" target="_blank" class="link link-hover mb-2 select-none"
+            >GitHub</a
+          >
         </div>
       </div>
     </div>

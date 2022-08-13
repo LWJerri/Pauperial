@@ -7,8 +7,7 @@ export async function stats(req: Request, res: Response) {
     const linkRepo = getRepository(Links);
 
     const total = await linkRepo.count();
-    const today = (await linkRepo.find({ where: { createdAt: MoreThanOrEqual(Date.now() - 1000 * 60 * 60 * 24) } }))
-      .length;
+    const today = (await linkRepo.find({ where: { createdAt: (Date.now() - 1000 * 60 * 60 * 24).toString() } })).length;
 
     return res.status(200).send({ error: false, total, today });
   } catch (err) {

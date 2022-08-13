@@ -3,7 +3,7 @@ import { Links } from "../typeorm/entities/Links";
 import generateQR from "./qr";
 
 export default async function getLink(code: string, host: string) {
-  const link = await getRepository(Links).findOne({ code });
+  const link = await getRepository(Links).findOne({ where: { code } });
 
   try {
     if (!link) throw new Error("Code didn't exist!");
