@@ -4,7 +4,15 @@
   const origin = window.location.origin;
 
   $: form = { link: null, secret: null };
-  $: result = {} as { error: boolean; code: string; link: string; qrData: string; secret: string; url: string; message: string };
+  $: result = {} as {
+    error: boolean;
+    code: string;
+    link: string;
+    qrData: string;
+    secret: string;
+    url: string;
+    message: string;
+  };
 
   async function sendURL() {
     const request = await fetch("/api/code", {
@@ -54,8 +62,18 @@
         <h1 class="mb-10 text-6xl font-bold outline-none select-none">Pauperial</h1>
 
         <div class="form-control">
-          <input bind:value={form.link} type="text" placeholder="Put your URL" class="input input-bordered mb-5 text-lg" />
-          <input bind:value={form.secret} type="text" placeholder="Secret code (optional)" class="input input-bordered mb-5 text-lg" />
+          <input
+            bind:value={form.link}
+            type="text"
+            placeholder="Put your URL"
+            class="input input-bordered mb-5 text-lg"
+          />
+          <input
+            bind:value={form.secret}
+            type="text"
+            placeholder="Secret code (optional)"
+            class="input input-bordered mb-5 text-lg"
+          />
         </div>
 
         <button class="btn btn-outline btn-accent btn-wide" on:click={sendURL}>＾▽＾</button>
