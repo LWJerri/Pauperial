@@ -1,28 +1,24 @@
 {
   "name": "pauperial",
+  "version": "2.0.0",
   "private": true,
-  "description": "Pauperial - Service for make short links!",
+  "description": "Simple tool for making short links or QR-code for your looong links, upload and share your images with one click!",
   "engines": {
     "node": ">= 16"
   },
-  "workspaces": {
-    "packages": [
-      "frontend",
-      "backend"
-    ],
-    "nohoist": [
-      "**"
-    ]
+  "workspaces": [
+    "apps/*"
+  ],
+  "prisma": {
+    "schema": "apps/backend/prisma/schema.prisma"
   },
   "scripts": {
-    "start": "yarn start:backend",
-    "build": "yarn workspaces run build",
-    "clean": "rimraf ./**/dist",
-    "clean:modules": "rimraf **/node_modules",
-    "start:backend": "yarn workspace @pauperial/backend start",
-    "start:frontend": "yarn workspace @pauperial/frontend start",
-    "dev:frontend": "yarn workspace @pauperial/frontend dev",
-    "dev:backend": "yarn workspace @pauperial/backend dev"
+    "start": "pnpm start:backend",
+    "build": "pnpm --filter=@pauperial/backend build && pnpm --filter=@pauperial/frontend build",
+    "start:backend": "pnpm --filter=@pauperial/backend start",
+    "start:frontend": "pnpm --filter=@pauperial/frontend start",
+    "dev:frontend": "pnpm --filter=@pauperial/frontend dev",
+    "dev:backend": "pnpm --filter=@pauperial/backend dev"
   },
   "repository": "https://github.com/LWJerri/Pauperial",
   "author": "LWJerri (lwjerri.js.org)",
@@ -30,7 +26,6 @@
   "devDependencies": {
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "rimraf": "^3.0.2",
     "typescript": "^4.7.4"
   },
   "dependencies": {

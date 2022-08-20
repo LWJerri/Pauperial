@@ -1,34 +1,28 @@
 # Description
 
-Pauperial - Simple tool for making short links or QR-code for your looong links.
+Pauperial - Simple tool for making short links or QR-code for your looong links, upload and share your images with one click!
 
 ## Installation
 
 ### Requirements
 
-- Yarn installed
-- Node.js >= v16
-- PostgreSQL database
+- pnpm installed.
+- Node.js >= v16.
+- PostgreSQL database.
 
 ### Installing
 
-- Clone this repository: `git clone https://github.com/LWJerri/Pauperial.git`
-- Install Node.js requirements `yarn`
-- Rename `.env.example` in backend folder to `.env`
-- Configurate `.env`
-- Build production code `yarn build`
-- Run production code `yarn start`
+- Clone this repository: `git clone https://github.com/LWJerri/Pauperial`.
+- Install Node.js requirements `pnpm install`.
+- Rename `.env.example` to `.env` and setup config file.
+- Build production code `pnpm build`.
+- Run production code `pnpm start`
 
 ## Production
 
-You also can use or test this code, just visit the [Pauperial website](https://paup.ml/)
+You also can use or test this code, just visit the [Pauperial website](https://paup.ml/).
 
 ## Screenshots
-
-![First screenshot](https://i.imgur.com/Krhd2fG.png)
-![Second screenshot](https://i.imgur.com/a1YzmEn.png)
-![Third screenshot](https://i.imgur.com/IakH7PX.png)
-![Four screenshot](https://i.imgur.com/8zw3rsy.png)
 
 ## Contributing
 
