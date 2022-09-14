@@ -8,9 +8,7 @@ RUN npm i pnpm -g
 RUN pnpm install
 
 COPY . /app
-COPY prisma/ ./prisma
 
-RUN npx prisma generate
 RUN pnpm run build
 
 CMD ["pnpm", "start"]

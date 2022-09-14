@@ -1,34 +1,28 @@
 {
   "name": "pauperial",
-  "version": "2.0.0",
-  "private": true,
-  "description": "Simple tool for making short links or QR-code for your looong links, upload and share your images with one click!",
-  "engines": {
-    "node": ">= 16"
-  },
-  "workspaces": [
-    "apps/*"
-  ],
-  "prisma": {
-    "schema": "apps/backend/prisma/schema.prisma"
-  },
+  "version": "3.0.0-coming",
+  "type": "module",
   "scripts": {
-    "start": "pnpm start:backend",
-    "build": "pnpm --filter=@pauperial/backend build && pnpm --filter=@pauperial/frontend build",
-    "start:backend": "pnpm --filter=@pauperial/backend start",
-    "start:frontend": "pnpm --filter=@pauperial/frontend start",
-    "dev:frontend": "pnpm --filter=@pauperial/frontend dev",
-    "dev:backend": "pnpm --filter=@pauperial/backend dev"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
-  "repository": "https://github.com/LWJerri/Pauperial",
-  "author": "LWJerri (lwjerri.js.org)",
-  "license": "MIT",
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.5",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.11",
+    "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "typescript": "^4.7.4"
+    "svelte": "^3.50.1",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0"
   },
   "dependencies": {
+    "daisyui": "^2.27.0",
+    "svelte-navigator": "^3.2.2",
     "tslib": "^2.4.0"
   }
 }
