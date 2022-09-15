@@ -9,6 +9,7 @@ RUN pnpm install
 
 COPY . /app
 
-RUN pnpm -r build
+RUN pnpm run build:backend
+RUN pnpm run build:frontend
 
 CMD [ "pnpm", "start" ]
