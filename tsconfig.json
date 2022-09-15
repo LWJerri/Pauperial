@@ -1,14 +1,19 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
+    "outDir": "./dist/",
+    "target": "ESNext",
+    "module": "commonjs",
+    "inlineSourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "allowJs": true,
-    "checkJs": true
+    "declaration": true,
+    "typeRoots": ["node_modules/@types"]
   },
 
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
+  "include": ["./src"],
+  "exclude": ["node_modules"]
 }
