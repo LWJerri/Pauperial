@@ -5,11 +5,10 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 RUN npm i pnpm -g
-RUN pnpm install
 
 COPY . /app
 
-RUN pnpm run build:backend
-RUN pnpm run build:frontend
+RUN pnpm install
+RUN pnpm run -r build
 
 CMD [ "pnpm", "start" ]
