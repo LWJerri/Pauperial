@@ -1,10 +1,10 @@
-import "source-map-support/register";
 import express from "express";
 import { join } from "path";
+import "source-map-support/register";
 
 const app = express();
 
-app.use(express.json(), express.static(join(__dirname, "..", "..", "frontend", "dist")));
+app.use(express.static(join(__dirname, "..", "..", "frontend", "dist")));
 
 app.get("*", (req, res) => {
   res.sendFile(join(__dirname, "..", "..", "frontend", "dist", "index.html"));
