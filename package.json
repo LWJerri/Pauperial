@@ -13,7 +13,7 @@
     "build:frontend": "pnpm --filter=@pauperial/frontend build"
   },
   "repository": "https://github.com/LWJerri/Pauperial",
-  "author": "LWJerri (lwjerri.js.org)",
+  "author": "LWJerri (lwjerri.dev)",
   "license": "MIT",
   "devDependencies": {
     "prettier": "^2.8.1"
