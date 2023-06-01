@@ -21,7 +21,7 @@
     "vite": "^4.0.3"
   },
   "dependencies": {
-    "daisyui": "^2.46.0",
+    "daisyui": "^3.0.0",
     "svelte-navigator": "^3.2.2",
     "tslib": "^2.4.1"
   }
