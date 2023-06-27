@@ -77,8 +77,8 @@ importers:
         specifier: ^3.55.0
         version: 3.55.0
       svelte-preprocess:
-        specifier: ^5.0.0
-        version: 5.0.0(postcss@8.4.20)(svelte@3.55.0)(typescript@5.0.2)
+        specifier: ^5.0.4
+        version: 5.0.4(postcss@8.4.20)(svelte@3.55.0)(typescript@5.0.2)
       tailwindcss:
         specifier: ^3.2.4
         version: 3.2.4(postcss@8.4.20)
@@ -421,12 +421,6 @@ packages:
 
   /@types/range-parser@1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
-    dev: true
-
-  /@types/sass@1.43.1:
-    resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
-    dependencies:
-      '@types/node': 20.3.2
     dev: true
 
   /@types/serve-static@1.15.0:
@@ -1679,14 +1673,14 @@ packages:
       semver: 7.0.0
     dev: true
 
-  /sorcery@0.10.0:
-    resolution: {integrity: sha512-R5ocFmKZQFfSTstfOtHjJuAwbpGyf9qjQa1egyhvXSbM7emjrtLXtGdZsDJDABC85YBfVvrOiGWKSYXPKdvP1g==}
+  /sorcery@0.11.0:
+    resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
     hasBin: true
     dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
       buffer-crc32: 0.2.13
       minimist: 1.2.6
       sander: 0.5.1
-      sourcemap-codec: 1.4.8
     dev: true
 
   /source-map-js@1.0.2:
@@ -1703,11 +1697,6 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
-
-  /sourcemap-codec@1.4.8:
-    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
-    deprecated: Please use @jridgewell/sourcemap-codec instead
-    dev: true
 
   /statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -1752,8 +1741,8 @@ packages:
       - typescript
     dev: false
 
-  /svelte-preprocess@5.0.0(postcss@8.4.20)(svelte@3.55.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-q7lpa7i2FBu8Pa+G0MmuQQWETBwCKgsGmuq1Sf6n8q4uaG9ZLcLP0Y+etC6bF4sE6EbLxfiI38zV6RfPe3RSfg==}
+  /svelte-preprocess@5.0.4(postcss@8.4.20)(svelte@3.55.0)(typescript@5.0.2):
+    resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:
@@ -1766,8 +1755,8 @@ packages:
       sass: ^1.26.8
       stylus: ^0.55.0
       sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
-      svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0
+      svelte: ^3.23.0 || ^4.0.0-next.0 || ^4.0.0
+      typescript: '>=3.9.5 || ^4.0.0 || ^5.0.0'
     peerDependenciesMeta:
       '@babel/core':
         optional: true
@@ -1791,11 +1780,10 @@ packages:
         optional: true
     dependencies:
       '@types/pug': 2.0.6
-      '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.27.0
       postcss: 8.4.20
-      sorcery: 0.10.0
+      sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.55.0
       typescript: 5.0.2
