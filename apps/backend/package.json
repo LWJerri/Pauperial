@@ -18,6 +18,6 @@
   "dependencies": {
     "express": "^4.18.2",
     "source-map-support": "^0.5.21",
-    "tsx": "^3.12.1"
+    "tsx": "^3.12.7"
   }
 }
