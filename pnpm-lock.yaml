@@ -46,8 +46,8 @@ importers:
   apps/frontend:
     dependencies:
       daisyui:
-        specifier: ^3.2.1
-        version: 3.2.1
+        specifier: ^3.3.1
+        version: 3.3.1
       svelte-navigator:
         specifier: ^3.2.2
         version: 3.2.2(svelte@4.0.5)(typescript@5.1.6)
@@ -715,8 +715,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  /daisyui@3.2.1:
-    resolution: {integrity: sha512-gIqE6wiqoJt9G8+n3R/SwLeUnpNCE2eDhT73rP0yZYVaM7o6zVcakBH3aEW5RGpx3UkonPiLuvcgxRcb2lE8TA==}
+  /daisyui@3.3.1:
+    resolution: {integrity: sha512-0PVNl+0r2Ie+FRkDNQABYcv8qLc0bt0lhUfSf8PxGocqpDsCB6cNQ5k8jOlnZIjUhc1EXMIDPU9r0pVrfRGftw==}
     engines: {node: '>=16.9.0'}
     dependencies:
       colord: 2.9.3
