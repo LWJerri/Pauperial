@@ -8,7 +8,7 @@ RUN corepack enable
 
 COPY . /app
 
-RUN pnpm i
+RUN pnpm install --no-frozen-lockfile
 RUN pnpm run -r build
 
 CMD [ "pnpm", "start" ]
