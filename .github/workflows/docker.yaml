@@ -25,13 +25,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_REGISTRY }}/lwjerri/pauperial:latest
       - name: Start Deployment
-        uses: TapTap21/docker-remote-deployment-action@v1.0
-        with:
-          remote_docker_host: ${{ secrets.DOCKERHUB_REGISTRY }}
-          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
-          stack_file_name: /home/ubuntu/services/pauperial/docker-compose.yml
-          docker_login_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          docker_login_user: ${{ secrets.DOCKERHUB_USERNAME }}
-          docker_login_registry: ${{ secrets.DOCKERHUB_REGISTRY }}
-          args: up -d
+        run: |
+          cd /home/ubuntu/services/pauperial
+          docker compose pull
+          sudo docker compose up -d
