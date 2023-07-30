@@ -27,7 +27,6 @@ jobs:
       - name: Start Deployment
         uses: TapTap21/docker-remote-deployment-action@v1.0
         with:
-          needs: setup
           remote_docker_host: ${{ secrets.DOCKERHUB_REGISTRY }}
           ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
