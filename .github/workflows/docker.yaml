@@ -27,5 +27,5 @@ jobs:
       - name: Start Deployment
         run: |
           cd /home/ubuntu/services/pauperial
-          docker compose pull
+          sudo docker compose pull
           sudo docker compose up -d
