@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_REGISTRY }}/LWJerri/Pauperial:latest
+          tags: ${{ secrets.DOCKERHUB_REGISTRY }}/lwjerri/pauperial:latest
