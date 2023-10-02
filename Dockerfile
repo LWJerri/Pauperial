@@ -3,7 +3,6 @@ FROM node:18-slim
 WORKDIR /app
 
 RUN corepack enable
-RUN pnpm -v
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
