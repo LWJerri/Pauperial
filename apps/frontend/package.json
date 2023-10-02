@@ -1,6 +1,6 @@
 {
   "name": "@pauperial/frontend",
-  "version": "3.0.0-coming",
+  "version": "3.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,8 +12,6 @@
     "@tsconfig/svelte": "^5.0.2",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3",
     "svelte": "^4.2.1",
     "svelte-preprocess": "^5.0.4",
     "tailwindcss": "^3.3.3",
