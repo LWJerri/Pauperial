@@ -10,7 +10,7 @@
     </div>
 
     <p class="mb-5 text-xl">
-      1Hello, dear user! Yes, this project is not dead and very soon I will release a new v3 version of this project.
+      Hello, dear user! Yes, this project is not dead and very soon I will release a new v3 version of this project.
       <br /><br />Don't worry, all data will be saved (probably)... My last v2 version is seriously broken and does not
       work anymore ;(
     </p>
