@@ -16,6 +16,6 @@
   "author": "LWJerri (lwjerri.dev)",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.3"
   }
 }
