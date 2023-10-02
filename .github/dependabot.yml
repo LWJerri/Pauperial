@@ -10,3 +10,13 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase-if-necessary
+  - package-ecosystem: "npm"
+    directory: "/apps/backend"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase-if-necessary
+  - package-ecosystem: "npm"
+    directory: "/apps/frontend"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase-if-necessary
