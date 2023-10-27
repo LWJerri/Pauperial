@@ -1,11 +1,11 @@
 version: "3.7"
 services:
   pauperial:
-    image: registry.d.lwjerri.dev/lwjerri/pauperial
+    image: registry.main.lwjerri.dev/lwjerri/pauperial
     networks:
       - caddy
     labels:
-      caddy: pauperial.d.lwjerri.dev
+      caddy: pauperial.main.lwjerri.dev
       caddy.reverse_proxy: "{{upstreams 4000}}"
 
 networks:
