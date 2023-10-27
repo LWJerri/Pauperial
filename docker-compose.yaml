@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   pauperial:
+    restart: always
     image: registry.main.lwjerri.dev/lwjerri/pauperial
     networks:
       - caddy
