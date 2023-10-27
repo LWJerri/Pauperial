@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_REGISTRY }}/lwjerri/pauperial:latest
+          tags: ${{ secrets.DOCKER_REGISTRY }}/lwjerri/pauperial:latest
       - name: Start Deployment
         run: |
           cd ./services/pauperial
