@@ -26,6 +26,6 @@ jobs:
           tags: ${{ secrets.DOCKER_REGISTRY }}/lwjerri/pauperial:latest
       - name: Start Deployment
         run: |
-          cd ./services/pauperial
+          cd /root/services/pauperial
           docker compose pull
           docker compose up -d
