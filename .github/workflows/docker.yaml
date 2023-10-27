@@ -1,9 +1,9 @@
-name: docker build and deploy
+name: CI & CD
 
 on:
   push:
     branches:
-      - "master"
+      - "production"
 
 jobs:
   docker:
@@ -16,9 +16,9 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          registry: ${{ secrets.DOCKERHUB_REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ${{ secrets.DOCKER_REGISTRY }}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
@@ -26,6 +26,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_REGISTRY }}/lwjerri/pauperial:latest
       - name: Start Deployment
         run: |
-          cd /home/ubuntu/services/pauperial
-          sudo docker compose pull
-          sudo docker compose up -d
+          cd ./services/pauperial
+          docker compose pull
+          docker compose up -d
