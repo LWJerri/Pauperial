@@ -57,7 +57,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.0
-        version: 3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3))
+        version: 3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4))
       '@tsconfig/svelte':
         specifier: ^5.0.2
         version: 5.0.2
@@ -81,7 +81,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^5.0.0
-        version: 5.0.0(@types/node@22.5.3)
+        version: 5.0.0(@types/node@22.5.4)
 
 packages:
 
@@ -492,11 +492,11 @@ packages:
   '@types/node@22.0.0':
     resolution: {integrity: sha512-VT7KSYudcPOzP5Q0wfbowyNLaVR8QWUdw+088uFWwfvpY6uCWaXpqV6ieLAu9WBcnTa7H4Z5RLK8I5t2FuOcqw==}
 
-  '@types/node@22.5.2':
-    resolution: {integrity: sha512-acJsPTEqYqulZS/Yp/S3GgeE6GZ0qYODUR8aVr/DkhHQ8l9nd4j5x1/ZJy9/gHrRlFMqkO6i0I3E27Alu4jjPg==}
-
   '@types/node@22.5.3':
     resolution: {integrity: sha512-njripolh85IA9SQGTAqbmnNZTdxv7X/4OYGPz8tgy5JDr8MP+uDBa921GpYEoDDnwm0Hmn5ZPeJgiiSTPoOzkQ==}
+
+  '@types/node@22.5.4':
+    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
 
   '@types/qs@6.9.9':
     resolution: {integrity: sha512-wYLxw35euwqGvTDx6zfY1vokBFnsK0HNrzc6xNHchxfO2hpuRg74GbkEW7e3sSmPvj0TjCDT1VCa6OtHXnubsg==}
@@ -1634,26 +1634,26 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.4.1':
     optional: true
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3)))(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3))':
+  '@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4)))(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3))
+      '@sveltejs/vite-plugin-svelte': 3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4))
       debug: 4.3.4
       svelte: 4.2.2
-      vite: 5.0.0(@types/node@22.5.3)
+      vite: 5.0.0(@types/node@22.5.4)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3))':
+  '@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3)))(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.3))
+      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.0(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4)))(svelte@4.2.2)(vite@5.0.0(@types/node@22.5.4))
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.5
       svelte: 4.2.2
       svelte-hmr: 0.15.3(svelte@4.2.2)
-      vite: 5.0.0(@types/node@22.5.3)
-      vitefu: 0.2.5(vite@5.0.0(@types/node@22.5.3))
+      vite: 5.0.0(@types/node@22.5.4)
+      vitefu: 0.2.5(vite@5.0.0(@types/node@22.5.4))
     transitivePeerDependencies:
       - supports-color
 
@@ -1662,17 +1662,17 @@ snapshots:
   '@types/body-parser@1.19.4':
     dependencies:
       '@types/connect': 3.4.37
-      '@types/node': 22.5.2
+      '@types/node': 22.5.3
 
   '@types/connect@3.4.37':
     dependencies:
-      '@types/node': 22.5.2
+      '@types/node': 22.5.3
 
   '@types/estree@1.0.5': {}
 
   '@types/express-serve-static-core@4.17.39':
     dependencies:
-      '@types/node': 22.5.2
+      '@types/node': 22.5.3
       '@types/qs': 6.9.9
       '@types/range-parser': 1.2.6
       '@types/send': 0.17.3
@@ -1694,11 +1694,11 @@ snapshots:
     dependencies:
       undici-types: 6.11.1
 
-  '@types/node@22.5.2':
+  '@types/node@22.5.3':
     dependencies:
       undici-types: 6.19.6
 
-  '@types/node@22.5.3':
+  '@types/node@22.5.4':
     dependencies:
       undici-types: 6.19.6
     optional: true
@@ -1710,13 +1710,13 @@ snapshots:
   '@types/send@0.17.3':
     dependencies:
       '@types/mime': 1.3.4
-      '@types/node': 22.5.2
+      '@types/node': 22.5.3
 
   '@types/serve-static@1.15.4':
     dependencies:
       '@types/http-errors': 2.0.3
       '@types/mime': 3.0.3
-      '@types/node': 22.5.2
+      '@types/node': 22.5.3
 
   abbrev@1.1.1: {}
 
@@ -2602,18 +2602,18 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@5.0.0(@types/node@22.5.3):
+  vite@5.0.0(@types/node@22.5.4):
     dependencies:
       esbuild: 0.19.5
       postcss: 8.4.31
       rollup: 4.4.1
     optionalDependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.0.0(@types/node@22.5.3)):
+  vitefu@0.2.5(vite@5.0.0(@types/node@22.5.4)):
     optionalDependencies:
-      vite: 5.0.0(@types/node@22.5.3)
+      vite: 5.0.0(@types/node@22.5.4)
 
   wrappy@1.0.2: {}
 
