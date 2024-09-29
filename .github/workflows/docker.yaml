@@ -6,26 +6,78 @@ on:
       - "production"
 
 jobs:
-  docker:
+  ci-job:
     runs-on: self-hosted
+    name: CI Job
     steps:
-      - name: Set up QEMU
-        run: sudo apt-get update && sudo apt-get install -y qemu-user-static
+      - name: Set repository name in lowercase
+        id: repo-name
+        run: echo "REPO_NAME_LOWER=$(echo ${GITHUB_REPOSITORY##*/} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: Login to Docker Hub
+
+      - name: Login to Docker Registry
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: ${{ secrets.DOCKER_REGISTRY }}
-      - name: Build and push
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+          registry: ${{ secrets.REGISTRY_URL }}
+
+      - name: Build app & Push to Docker Registry
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKER_REGISTRY }}/lwjerri/pauperial:latest
-      - name: Start Deployment
+          tags: ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USERNAME }}/${{ env.REPO_NAME_LOWER }}:latest
+
+  cd-job:
+    runs-on: self-hosted
+    name: CD Job
+    needs: ci-job
+    steps:
+      - name: Set repository name in lowercase
+        id: repo-name
+        run: echo "REPO_NAME_LOWER=$(echo ${GITHUB_REPOSITORY##*/} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+          registry: ${{ secrets.REGISTRY_URL }}
+
+      - name: Create/Open project directory
+        shell: bash
+        env:
+          PROJECT_DIR: ${{ secrets.MOUNT_DIR }}/${{ env.REPO_NAME_LOWER }}
+        run: mkdir -p $PROJECT_DIR && cd $PROJECT_DIR
+
+      - name: Download new docker-compose.prod.yaml
+        shell: bash
         run: |
-          cd /root/services/pauperial
+          cd ${{ secrets.MOUNT_DIR }}/${{ env.REPO_NAME_LOWER }}
+
+          HEAD_REF="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+          FILE_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$HEAD_REF/docker-compose.prod.yaml"
+
+          curl -H "Authorization: token ${{ secrets.PIPELINE_TOKEN }}" -o docker-compose.yaml $FILE_URL
+
+          sed -i 's/\$REGISTRY_URL/${{ secrets.REGISTRY_URL }}/g' docker-compose.yaml
+          sed -i 's/\$REGISTRY_USER/${{ secrets.REGISTRY_USERNAME }}/g' docker-compose.yaml
+          sed -i 's/\$APP_NAME/${{ env.REPO_NAME_LOWER }}/g' docker-compose.yaml
+
+      - name: Run services with latest version
+        shell: bash
+        run: |
+          cd ${{ secrets.MOUNT_DIR }}/${{ env.REPO_NAME_LOWER }}
+
           docker compose pull
-          docker compose up -d
+          docker compose up -d --remove-orphans

@@ -1,0 +1,10 @@
+services:
+  pauperial:
+    restart: always
+    image: $REGISTRY_URL/$REGISTRY_USER/$APP_NAME:latest
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    external: true
