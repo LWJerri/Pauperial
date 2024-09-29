@@ -71,7 +71,7 @@ jobs:
           curl -H "Authorization: token ${{ secrets.PIPELINE_TOKEN }}" -o docker-compose.yaml $FILE_URL
 
           sed -i 's/\$REGISTRY_URL/${{ secrets.REGISTRY_URL }}/g' docker-compose.yaml
-          sed -i 's/\$REGISTRY_USER/${{ secrets.REGISTRY_USERNAME }}/g' docker-compose.yaml
+          sed -i 's/\$REGISTRY_USERNAME/${{ secrets.REGISTRY_USERNAME }}/g' docker-compose.yaml
           sed -i 's/\$APP_NAME/${{ env.REPO_NAME_LOWER }}/g' docker-compose.yaml
 
       - name: Run services with latest version

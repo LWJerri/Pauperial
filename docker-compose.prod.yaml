@@ -1,7 +1,7 @@
 services:
   pauperial:
     restart: always
-    image: $REGISTRY_URL/$REGISTRY_USER/$APP_NAME:latest
+    image: $REGISTRY_URL/$REGISTRY_USERNAME/$APP_NAME:latest
     networks:
       - nginx
 
