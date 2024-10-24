@@ -13,10 +13,10 @@ importers:
         version: 3.3.3
       prettier-plugin-svelte:
         specifier: ^3.0.3
-        version: 3.2.7(prettier@3.3.3)(svelte@5.0.5)
+        version: 3.2.7(prettier@3.3.3)(svelte@5.1.0)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.0
-        version: 0.6.8(prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.0.5))(prettier@3.3.3)
+        version: 0.6.8(prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.1.0))(prettier@3.3.3)
 
   apps/backend:
     dependencies:
@@ -1281,6 +1281,10 @@ packages:
     resolution: {integrity: sha512-f4WBlP5g8W6pEoDfx741lewMlemy+LIGpEqjGPWqnHVP92wqlQXl87U5O5Bi2tkSUrO95OxOoqwU8qlqiHmFKA==}
     engines: {node: '>=18'}
 
+  svelte@5.1.0:
+    resolution: {integrity: sha512-qD0pUvL3P26Vx+K1VodZROSu7MjDHFDunEVZ+2d3LUDWHyYI87AJFOIws0HufKWHDgXbPO4FCSugmysnX4LDwA==}
+    engines: {node: '>=18'}
+
   tailwindcss@3.3.5:
     resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
     engines: {node: '>=14.0.0'}
@@ -2249,16 +2253,16 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.0.5):
+  prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.1.0):
     dependencies:
       prettier: 3.3.3
-      svelte: 5.0.5
+      svelte: 5.1.0
 
-  prettier-plugin-tailwindcss@0.6.8(prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.0.5))(prettier@3.3.3):
+  prettier-plugin-tailwindcss@0.6.8(prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@5.1.0))(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
     optionalDependencies:
-      prettier-plugin-svelte: 3.2.7(prettier@3.3.3)(svelte@5.0.5)
+      prettier-plugin-svelte: 3.2.7(prettier@3.3.3)(svelte@5.1.0)
 
   prettier@3.0.3: {}
 
@@ -2427,6 +2431,22 @@ snapshots:
       typescript: 5.2.2
 
   svelte@5.0.5:
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@types/estree': 1.0.6
+      acorn: 8.13.0
+      acorn-typescript: 1.4.13(acorn@8.13.0)
+      aria-query: 5.3.2
+      axobject-query: 4.1.0
+      esm-env: 1.0.0
+      esrap: 1.2.2
+      is-reference: 3.0.2
+      locate-character: 3.0.0
+      magic-string: 0.30.12
+      zimmerframe: 1.1.2
+
+  svelte@5.1.0:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
