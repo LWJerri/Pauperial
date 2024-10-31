@@ -57,7 +57,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.0
-        version: 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9))
+        version: 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5))
       '@tsconfig/svelte':
         specifier: ^5.0.2
         version: 5.0.2
@@ -81,7 +81,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^5.0.0
-        version: 5.0.0(@types/node@22.7.9)
+        version: 5.0.0(@types/node@22.8.5)
 
 packages:
 
@@ -494,6 +494,9 @@ packages:
 
   '@types/node@22.7.9':
     resolution: {integrity: sha512-jrTfRC7FM6nChvU7X2KqcrgquofrWLFDeYC1hKfwNWomVvrn7JIksqf344WN2X/y8xrgqBd2dJATZV4GbatBfg==}
+
+  '@types/node@22.8.5':
+    resolution: {integrity: sha512-5iYk6AMPtsMbkZqCO1UGF9W5L38twq11S2pYWkybGHH2ogPUvXWNlQqJBzuEZWKj/WRH+QTeiv6ySWqJtvIEgA==}
 
   '@types/qs@6.9.9':
     resolution: {integrity: sha512-wYLxw35euwqGvTDx6zfY1vokBFnsK0HNrzc6xNHchxfO2hpuRg74GbkEW7e3sSmPvj0TjCDT1VCa6OtHXnubsg==}
@@ -1335,6 +1338,9 @@ packages:
   undici-types@6.19.6:
     resolution: {integrity: sha512-e/vggGopEfTKSvj4ihnOLTsqhrKRN3LeO6qSN/GxohhuRv8qH9bNQ4B8W7e/vFL+0XTnmHPB4/kegunZGA4Org==}
 
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
@@ -1611,25 +1617,25 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.4.1':
     optional: true
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9))':
+  '@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9))
+      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5))
       debug: 4.3.7
       svelte: 5.0.5
-      vite: 5.0.0(@types/node@22.7.9)
+      vite: 5.0.0(@types/node@22.8.5)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9))':
+  '@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.7.9))
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.8.5))
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.12
       svelte: 5.0.5
-      vite: 5.0.0(@types/node@22.7.9)
-      vitefu: 1.0.3(vite@5.0.0(@types/node@22.7.9))
+      vite: 5.0.0(@types/node@22.8.5)
+      vitefu: 1.0.3(vite@5.0.0(@types/node@22.8.5))
     transitivePeerDependencies:
       - supports-color
 
@@ -1673,6 +1679,11 @@ snapshots:
   '@types/node@22.7.9':
     dependencies:
       undici-types: 6.19.6
+
+  '@types/node@22.8.5':
+    dependencies:
+      undici-types: 6.19.8
+    optional: true
 
   '@types/qs@6.9.9': {}
 
@@ -2524,6 +2535,9 @@ snapshots:
 
   undici-types@6.19.6: {}
 
+  undici-types@6.19.8:
+    optional: true
+
   unpipe@1.0.0: {}
 
   update-browserslist-db@1.0.13(browserslist@4.22.1):
@@ -2538,18 +2552,18 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@5.0.0(@types/node@22.7.9):
+  vite@5.0.0(@types/node@22.8.5):
     dependencies:
       esbuild: 0.19.5
       postcss: 8.4.31
       rollup: 4.4.1
     optionalDependencies:
-      '@types/node': 22.7.9
+      '@types/node': 22.8.5
       fsevents: 2.3.3
 
-  vitefu@1.0.3(vite@5.0.0(@types/node@22.7.9)):
+  vitefu@1.0.3(vite@5.0.0(@types/node@22.8.5)):
     optionalDependencies:
-      vite: 5.0.0(@types/node@22.7.9)
+      vite: 5.0.0(@types/node@22.8.5)
 
   wrappy@1.0.2: {}
 
