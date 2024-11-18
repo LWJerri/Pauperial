@@ -13,10 +13,10 @@ importers:
         version: 3.3.3
       prettier-plugin-svelte:
         specifier: ^3.0.3
-        version: 3.2.8(prettier@3.3.3)(svelte@5.1.16)
+        version: 3.2.8(prettier@3.3.3)(svelte@5.2.2)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.0
-        version: 0.6.8(prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.1.16))(prettier@3.3.3)
+        version: 0.6.8(prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.2.2))(prettier@3.3.3)
 
   apps/backend:
     dependencies:
@@ -847,6 +847,9 @@ packages:
   is-reference@3.0.2:
     resolution: {integrity: sha512-v3rht/LgVcsdZa3O2Nqs+NMowLOxeOm7Ay9+/ARQ2F+qEoANRcqrjAZKGN0v8ymUetZGgkp26LTnGT7H0Qo9Pg==}
 
+  is-reference@3.0.3:
+    resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
+
   jiti@1.20.0:
     resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
     hasBin: true
@@ -1278,8 +1281,8 @@ packages:
     resolution: {integrity: sha512-f4WBlP5g8W6pEoDfx741lewMlemy+LIGpEqjGPWqnHVP92wqlQXl87U5O5Bi2tkSUrO95OxOoqwU8qlqiHmFKA==}
     engines: {node: '>=18'}
 
-  svelte@5.1.16:
-    resolution: {integrity: sha512-QcY+om9r8+uTcSfeFuv8++ExdfwVCKeT+Y7GPSZ6rQPczvy62BMtvMoi0rScabgv+upGE5jxKjd7M4u23+AjGA==}
+  svelte@5.2.2:
+    resolution: {integrity: sha512-eHIJRcvA6iuXdRGMESTmBtWTQCcCiol4gyH9DA60ybS35W1x27cvtbndNvWDqX72blyf+AYeQ4gzZ0XGg3L8sw==}
     engines: {node: '>=18'}
 
   tailwindcss@3.3.5:
@@ -2082,6 +2085,10 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.6
 
+  is-reference@3.0.3:
+    dependencies:
+      '@types/estree': 1.0.6
+
   jiti@1.20.0: {}
 
   kleur@4.1.5: {}
@@ -2245,16 +2252,16 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.1.16):
+  prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.2.2):
     dependencies:
       prettier: 3.3.3
-      svelte: 5.1.16
+      svelte: 5.2.2
 
-  prettier-plugin-tailwindcss@0.6.8(prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.1.16))(prettier@3.3.3):
+  prettier-plugin-tailwindcss@0.6.8(prettier-plugin-svelte@3.2.8(prettier@3.3.3)(svelte@5.2.2))(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
     optionalDependencies:
-      prettier-plugin-svelte: 3.2.8(prettier@3.3.3)(svelte@5.1.16)
+      prettier-plugin-svelte: 3.2.8(prettier@3.3.3)(svelte@5.2.2)
 
   prettier@3.0.3: {}
 
@@ -2438,7 +2445,7 @@ snapshots:
       magic-string: 0.30.12
       zimmerframe: 1.1.2
 
-  svelte@5.1.16:
+  svelte@5.2.2:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -2449,7 +2456,7 @@ snapshots:
       axobject-query: 4.1.0
       esm-env: 1.0.0
       esrap: 1.2.2
-      is-reference: 3.0.2
+      is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.12
       zimmerframe: 1.1.2
