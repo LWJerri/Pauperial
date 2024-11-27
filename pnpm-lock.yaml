@@ -56,8 +56,8 @@ importers:
         version: 2.6.2
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^4.0.0
-        version: 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
+        specifier: ^5.0.1
+        version: 5.0.1(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
       '@tsconfig/svelte':
         specifier: ^5.0.2
         version: 5.0.2
@@ -447,20 +447,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.0':
-    resolution: {integrity: sha512-hBxSYW/66989cq9dN248omD/ziskSdIV1NqfuueuAI1z6jGcg14k9Zd98pDIEnoA6wC9kWUGuQ6adzBbWwQyRg==}
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1':
+    resolution: {integrity: sha512-J/Nmb2Q2y7mck2hyCX4ckVHcR5tu2J+MtBEQqpDrrgELZ2uvraQcK/ioCV61AqkdXFgriksOKIceDcQmqnGhVw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
     peerDependencies:
-      '@sveltejs/vite-plugin-svelte': ^4.0.0-next.0||^4.0.0
-      svelte: ^5.0.0-next.96 || ^5.0.0
-      vite: ^5.0.0
+      '@sveltejs/vite-plugin-svelte': ^5.0.0
+      svelte: ^5.0.0
+      vite: ^6.0.0
 
-  '@sveltejs/vite-plugin-svelte@4.0.0':
-    resolution: {integrity: sha512-kpVJwF+gNiMEsoHaw+FJL76IYiwBikkxYU83+BpqQLdVMff19KeRKLd2wisS8niNBMJ2omv5gG+iGDDwd8jzag==}
+  '@sveltejs/vite-plugin-svelte@5.0.1':
+    resolution: {integrity: sha512-D5l5+STmywGoLST07T9mrqqFFU+xgv5fqyTWM+VbxTvQ6jujNn4h3lQNCvlwVYs4Erov8i0K5Rwr3LQtmBYmBw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
     peerDependencies:
-      svelte: ^5.0.0-next.96 || ^5.0.0
-      vite: ^5.0.0
+      svelte: ^5.0.0
+      vite: ^6.0.0
 
   '@tsconfig/svelte@5.0.2':
     resolution: {integrity: sha512-BRbo1fOtyVbhfLyuCWw6wAWp+U8UQle+ZXu84MYYWzYSEB28dyfnRBIE99eoG+qdAC0po6L2ScIEivcT07UaMA==}
@@ -884,6 +884,9 @@ packages:
 
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
+
+  magic-string@0.30.14:
+    resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
 
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -1638,22 +1641,22 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.4.1':
     optional: true
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.1(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
+      '@sveltejs/vite-plugin-svelte': 5.0.1(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
       debug: 4.3.7
       svelte: 5.0.5
       vite: 5.0.0(@types/node@22.9.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))':
+  '@sveltejs/vite-plugin-svelte@5.0.1(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.1(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3)))(svelte@5.0.5)(vite@5.0.0(@types/node@22.9.3))
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
-      magic-string: 0.30.12
+      magic-string: 0.30.14
       svelte: 5.0.5
       vite: 5.0.0(@types/node@22.9.3)
       vitefu: 1.0.3(vite@5.0.0(@types/node@22.9.3))
@@ -2143,6 +2146,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  magic-string@0.30.14:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
+
   media-typer@0.3.0: {}
 
   merge-descriptors@1.0.1: {}
@@ -2498,7 +2505,7 @@ snapshots:
       esrap: 1.2.2
       is-reference: 3.0.3
       locate-character: 3.0.0
-      magic-string: 0.30.12
+      magic-string: 0.30.14
       zimmerframe: 1.1.2
 
   tailwindcss@3.3.5:
