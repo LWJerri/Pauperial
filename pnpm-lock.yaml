@@ -38,7 +38,7 @@ importers:
         version: 3.1.9
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.4.2
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1400,11 +1400,6 @@ packages:
         optional: true
       prettier-plugin-svelte:
         optional: true
-
-  prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   prettier@3.4.2:
     resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
@@ -2828,8 +2823,6 @@ snapshots:
       prettier: 3.4.2
     optionalDependencies:
       prettier-plugin-svelte: 3.3.2(prettier@3.4.2)(svelte@5.17.3)
-
-  prettier@3.0.3: {}
 
   prettier@3.4.2: {}
 
