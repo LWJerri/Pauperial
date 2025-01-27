@@ -60,7 +60,7 @@ importers:
         version: 5.0.3(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.5)(jiti@1.21.6)(tsx@4.19.2)(yaml@2.6.0))
       '@tsconfig/svelte':
         specifier: ^5.0.2
-        version: 5.0.2
+        version: 5.0.4
       autoprefixer:
         specifier: ^10.4.16
         version: 10.4.20(postcss@8.5.1)
@@ -511,8 +511,8 @@ packages:
       svelte: ^5.0.0
       vite: ^6.0.0
 
-  '@tsconfig/svelte@5.0.2':
-    resolution: {integrity: sha512-BRbo1fOtyVbhfLyuCWw6wAWp+U8UQle+ZXu84MYYWzYSEB28dyfnRBIE99eoG+qdAC0po6L2ScIEivcT07UaMA==}
+  '@tsconfig/svelte@5.0.4':
+    resolution: {integrity: sha512-BV9NplVgLmSi4mwKzD8BD/NQ8erOY/nUE/GpgWe2ckx+wIQF5RyRirn/QsSSCPeulVpc3RA/iJt6DpfTIZps0Q==}
 
   '@types/body-parser@1.19.4':
     resolution: {integrity: sha512-N7UDG0/xiPQa2D/XrVJXjkWbpqHCd2sBaB32ggRF2l83RhPfamgKGF8gwwqyksS95qUS5ZYF9aF+lLPRlwI2UA==}
@@ -1574,7 +1574,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tsconfig/svelte@5.0.2': {}
+  '@tsconfig/svelte@5.0.4': {}
 
   '@types/body-parser@1.19.4':
     dependencies:
