@@ -75,7 +75,7 @@ importers:
         version: 6.0.3(postcss-load-config@4.0.2(postcss@8.5.2))(postcss@8.5.2)(svelte@5.20.0)(typescript@5.7.3)
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.0.4
+        version: 4.0.6
       typescript:
         specifier: ^5.2.2
         version: 5.7.3
@@ -1203,8 +1203,8 @@ packages:
     resolution: {integrity: sha512-04HJfFLaTwTyEKdPm3vYGdaD/8ZAHcd9SEBufq0FZNIrdzJWdM1usVdm4KIlzzDfM5+aMzio6BBhpXPoPGuMjg==}
     engines: {node: '>=18'}
 
-  tailwindcss@4.0.4:
-    resolution: {integrity: sha512-/ezDLEkOLf1lXkr9F2iI5BHJbexJpty5zkV2B8bGHCqAdbc9vk85Jgdkq+ZOvNkNPa3yAaqJ8DjRt584Bc84kw==}
+  tailwindcss@4.0.6:
+    resolution: {integrity: sha512-mysewHYJKaXgNOW6pp5xon/emCsfAMnO8WMaGKZZ35fomnR/T5gYnRg2/yRTTrtXiEl1tiVkeRt0eMO6HxEZqw==}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -2276,7 +2276,7 @@ snapshots:
       magic-string: 0.30.17
       zimmerframe: 1.1.2
 
-  tailwindcss@4.0.4: {}
+  tailwindcss@4.0.6: {}
 
   to-regex-range@5.0.1:
     dependencies:
