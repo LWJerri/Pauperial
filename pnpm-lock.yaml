@@ -10,13 +10,13 @@ importers:
     devDependencies:
       prettier:
         specifier: ^3.0.3
-        version: 3.5.1
+        version: 3.5.2
       prettier-plugin-svelte:
         specifier: ^3.0.3
-        version: 3.3.3(prettier@3.5.1)(svelte@5.20.2)
+        version: 3.3.3(prettier@3.5.2)(svelte@5.20.2)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.0
-        version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.1)(svelte@5.20.2))(prettier@3.5.1)
+        version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.2)(svelte@5.20.2))(prettier@3.5.2)
 
   apps/backend:
     dependencies:
@@ -38,7 +38,7 @@ importers:
         version: 3.1.9
       prettier:
         specifier: ^3.0.3
-        version: 3.5.1
+        version: 3.5.2
       typescript:
         specifier: ^5.2.2
         version: 5.7.3
@@ -72,7 +72,7 @@ importers:
         version: 5.20.2
       svelte-preprocess:
         specifier: ^6.0.0
-        version: 6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.20.1)(typescript@5.7.3)
+        version: 6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.20.2)(typescript@5.7.3)
       tailwindcss:
         specifier: ^4.0.0
         version: 4.0.7
@@ -1067,8 +1067,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.5.1:
-    resolution: {integrity: sha512-hPpFQvHwL3Qv5AdRvBFMhnKo4tYxp0ReXiPn2bxkiohEX6mBeBwEpBSQTkD458RaaDKQMYSp4hX4UtfUTA5wDw==}
+  prettier@3.5.2:
+    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2108,18 +2108,18 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-svelte@3.3.3(prettier@3.5.1)(svelte@5.20.2):
+  prettier-plugin-svelte@3.3.3(prettier@3.5.2)(svelte@5.20.2):
     dependencies:
-      prettier: 3.5.1
+      prettier: 3.5.2
       svelte: 5.20.2
 
-  prettier-plugin-tailwindcss@0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.1)(svelte@5.20.2))(prettier@3.5.1):
+  prettier-plugin-tailwindcss@0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.2)(svelte@5.20.2))(prettier@3.5.2):
     dependencies:
-      prettier: 3.5.1
+      prettier: 3.5.2
     optionalDependencies:
-      prettier-plugin-svelte: 3.3.3(prettier@3.5.1)(svelte@5.20.2)
+      prettier-plugin-svelte: 3.3.3(prettier@3.5.2)(svelte@5.20.2)
 
-  prettier@3.5.1: {}
+  prettier@3.5.2: {}
 
   proxy-addr@2.0.7:
     dependencies:
@@ -2254,7 +2254,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.20.1)(typescript@5.7.3):
+  svelte-preprocess@6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.20.2)(typescript@5.7.3):
     dependencies:
       svelte: 5.20.2
     optionalDependencies:
