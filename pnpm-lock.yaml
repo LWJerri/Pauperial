@@ -41,7 +41,7 @@ importers:
         version: 3.5.3
       typescript:
         specifier: ^5.2.2
-        version: 5.7.3
+        version: 5.8.2
 
   apps/frontend:
     dependencies:
@@ -50,7 +50,7 @@ importers:
         version: 4.12.23(postcss@8.5.3)
       svelte-navigator:
         specifier: ^3.2.2
-        version: 3.2.2(svelte@5.21.0)(typescript@5.7.3)
+        version: 3.2.2(svelte@5.21.0)(typescript@5.8.2)
       tslib:
         specifier: ^2.6.2
         version: 2.8.1
@@ -72,13 +72,13 @@ importers:
         version: 5.21.0
       svelte-preprocess:
         specifier: ^6.0.0
-        version: 6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.21.0)(typescript@5.7.3)
+        version: 6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.21.0)(typescript@5.8.2)
       tailwindcss:
         specifier: ^4.0.0
         version: 4.0.9
       typescript:
         specifier: ^5.2.2
-        version: 5.7.3
+        version: 5.8.2
       vite:
         specifier: ^6.0.1
         version: 6.2.0(@types/node@22.13.8)(jiti@1.21.6)(tsx@4.19.3)(yaml@2.6.0)
@@ -1081,8 +1081,8 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1989,27 +1989,27 @@ snapshots:
     dependencies:
       has-flag: 3.0.0
 
-  svelte-navigator@3.2.2(svelte@5.21.0)(typescript@5.7.3):
+  svelte-navigator@3.2.2(svelte@5.21.0)(typescript@5.8.2):
     dependencies:
       svelte: 5.21.0
-      svelte2tsx: 0.1.193(svelte@5.21.0)(typescript@5.7.3)
+      svelte2tsx: 0.1.193(svelte@5.21.0)(typescript@5.8.2)
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.21.0)(typescript@5.7.3):
+  svelte-preprocess@6.0.3(postcss-load-config@4.0.2(postcss@8.5.3))(postcss@8.5.3)(svelte@5.21.0)(typescript@5.8.2):
     dependencies:
       svelte: 5.21.0
     optionalDependencies:
       postcss: 8.5.3
       postcss-load-config: 4.0.2(postcss@8.5.3)
-      typescript: 5.7.3
+      typescript: 5.8.2
 
-  svelte2tsx@0.1.193(svelte@5.21.0)(typescript@5.7.3):
+  svelte2tsx@0.1.193(svelte@5.21.0)(typescript@5.8.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 5.21.0
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   svelte@5.21.0:
     dependencies:
@@ -2052,7 +2052,7 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typescript@5.7.3: {}
+  typescript@5.8.2: {}
 
   undefsafe@2.0.5: {}
 
