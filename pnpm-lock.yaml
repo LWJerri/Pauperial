@@ -47,7 +47,7 @@ importers:
     dependencies:
       daisyui:
         specifier: ^5.0.0
-        version: 5.0.0
+        version: 5.0.3
       svelte-navigator:
         specifier: ^3.2.2
         version: 3.2.2(svelte@5.22.5)(typescript@5.8.2)
@@ -509,8 +509,8 @@ packages:
     resolution: {integrity: sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==}
     engines: {node: '>= 0.6'}
 
-  daisyui@5.0.0:
-    resolution: {integrity: sha512-U0K9Bac3Bi3zZGm6ojrw12F0vBHTpEgf46zv/BYxLe07hF0Xnx7emIQliwaRBgJuYhY0BhwQ6wSnq5cJXHA2yA==}
+  daisyui@5.0.3:
+    resolution: {integrity: sha512-27dou80uFNgxVcmQNzS8QFBoE1/01u7N0smdGqA2pHbaRPTFoHdJfXNzilpvt/0jAVu8cMEhrVPoYxpdxLwumA==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -1479,7 +1479,7 @@ snapshots:
 
   cookie@0.7.1: {}
 
-  daisyui@5.0.0: {}
+  daisyui@5.0.3: {}
 
   debug@2.6.9:
     dependencies:
