@@ -1,0 +1,104 @@
+name: CI & CD
+
+on:
+  push:
+    branches:
+      - "production"
+
+jobs:
+  setup:
+    runs-on: self-hosted
+    name: Setup Workflow
+    outputs:
+      repo_name: ${{ steps.repo-name.outputs.repo_name }}
+    steps:
+      - name: Set repository name in lowercase
+        id: repo-name
+        run: echo "repo_name=$(echo ${GITHUB_REPOSITORY##*/} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+  ci-job:
+    runs-on: self-hosted
+    name: CI Job
+    needs: setup
+    env:
+      REPO_NAME: ${{ needs.setup.outputs.repo_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Infisical CLI
+        uses: Infisical/secrets-action@v1.0.7
+        with:
+          client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
+          client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
+          project-slug: ${{ secrets.INFISICAL_PROJECT_SLUG }}
+          env-slug: production
+          domain: ${{ secrets.INFISICAL_API_URL }}
+
+      - name: Login to Docker Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.REGISTRY_USERNAME }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          registry: ${{ env.REGISTRY_URL }}
+
+      - name: Build app & Push to Docker Registry
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ env.REGISTRY_URL }}/${{ env.REGISTRY_USERNAME }}/${{ env.REPO_NAME }}:latest
+
+  cd-job:
+    runs-on: self-hosted
+    name: CD Job
+    needs: [setup, ci-job]
+    env:
+      REPO_NAME: ${{ needs.setup.outputs.repo_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Infisical CLI
+        uses: Infisical/secrets-action@v1.0.7
+        with:
+          client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
+          client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
+          project-slug: ${{ secrets.INFISICAL_PROJECT_SLUG }}
+          env-slug: production
+          domain: ${{ secrets.INFISICAL_API_URL }}
+
+      - name: Login to Docker Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.REGISTRY_USERNAME }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          registry: ${{ env.REGISTRY_URL }}
+
+      - name: Create/Open project directory
+        shell: bash
+        env:
+          PROJECT_DIR: ${{ env.MOUNT_DIR }}/${{ env.REPO_NAME }}
+        run: mkdir -p $PROJECT_DIR && cd $PROJECT_DIR
+
+      - name: Creating a new docker-compose.yaml
+        shell: bash
+        run: |
+          cd ${{ env.MOUNT_DIR }}/${{ env.REPO_NAME }}
+
+          cp ${{ github.workspace }}/docker-compose.prod.yaml docker-compose.yaml
+
+          sed -i 's/\$REGISTRY_URL/${{ env.REGISTRY_URL }}/g' docker-compose.yaml
+          sed -i 's/\$REGISTRY_USERNAME/${{ env.REGISTRY_USERNAME }}/g' docker-compose.yaml
+          sed -i 's/\$APP_NAME/${{ env.REPO_NAME }}/g' docker-compose.yaml
+
+      - name: Run services with latest version
+        shell: bash
+        run: |
+          cd ${{ env.MOUNT_DIR }}/${{ env.REPO_NAME }}
+
+          docker compose pull
+          docker compose up -d --remove-orphans
