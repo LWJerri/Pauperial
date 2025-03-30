@@ -1,10 +1,5 @@
-<script lang="ts">
-  import { Route, Router } from "svelte-navigator";
-  import Main from "./pages/Main.svelte";
-</script>
+<main>
+  <h1>Pauperial</h1>
 
-<Router>
-  <main>
-    <Route component={Main} />
-  </main>
-</Router>
+  <p>The project is temporarily frozen due to overuse for masking malicious links and more.</p>
+</main>
