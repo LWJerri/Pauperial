@@ -5,10 +5,6 @@ const app = express();
 
 app.use(express.static(join(__dirname, "..", "..", "frontend", "dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "..", "..", "frontend", "dist", "index.html"));
-});
+app.get("*", (req, res) => res.sendFile(join(__dirname, "..", "..", "frontend", "dist", "index.html")));
 
-app.listen(4000, () => {
-  console.log(" > Coming Soon page launced!");
-});
+app.listen(4000, () => console.log(" > Coming Soon page launced!"));
