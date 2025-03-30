@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:20-slim
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 COPY . /app
 
-RUN pnpm i
-RUN pnpm run -r build
+RUN pnpm i -r
+RUN pnpm -r build
 
-CMD [ "pnpm", "start" ]
+CMD ["pnpm", "start"]

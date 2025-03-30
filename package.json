@@ -13,8 +13,8 @@
   "author": "LWJerri (lwjerri.dev)",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.6.0"
+    "prettier": "3.5.3",
+    "prettier-plugin-svelte": "3.3.3",
+    "prettier-plugin-tailwindcss": "0.6.11"
   }
 }
