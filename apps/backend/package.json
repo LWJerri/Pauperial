@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "express": "5.1.0",
-    "tsx": "4.19.4"
+    "tsx": "4.20.1"
   }
 }
