@@ -3,5 +3,4 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
-  - rollup
   - svelte-preprocess
