@@ -15,7 +15,7 @@
     "typescript": "5.9.3"
   },
   "dependencies": {
-    "express": "5.1.0",
+    "express": "5.2.0",
     "tsx": "4.20.6"
   }
 }
