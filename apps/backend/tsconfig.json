@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "dist",
-    "target": "ESNext",
+    "target": "ES2025",
+    "lib": ["ES2025"],
     "module": "commonjs",
+    "moduleResolution": "bundler",
     "inlineSourceMap": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "typeRoots": ["node_modules/@types"]
+    "strict": true,
+    "types": ["node"]
   },
-
   "include": ["src"],
   "exclude": ["node_modules"]
 }
