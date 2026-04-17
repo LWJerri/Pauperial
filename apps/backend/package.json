@@ -12,7 +12,7 @@
     "@types/node": "25.6.0",
     "nodemon": "3.1.14",
     "prettier": "3.8.3",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   },
   "dependencies": {
     "express": "5.2.1",
