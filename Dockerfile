@@ -1,8 +1,8 @@
-FROM node:24-slim
+FROM node:24-alpine
 
 WORKDIR /app
 
-RUN npm i pnpm@latest -g
+RUN npm i pnpm@10.29.1 -g
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
